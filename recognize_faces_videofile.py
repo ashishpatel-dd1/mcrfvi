@@ -4,6 +4,7 @@ Created on Wed Mar 20 11:51:46 2021
 
 @author: Ashish
 """
+# python faceEncode.py --dataset dataset/actors --encodings encodings.pickle -c 4
 
 import argparse
 import pickle
