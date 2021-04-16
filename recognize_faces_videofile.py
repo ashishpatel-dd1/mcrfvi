@@ -4,7 +4,7 @@ Created on Wed Mar 20 11:51:46 2021
 
 @author: Ashish
 """
-# python faceEncode.py --dataset dataset/actors --encodings encodings.pickle -c 4
+# python faceRecVideoFile.py -e encodings.pickle -i mcrfvi/input/friends_s01e01.mkv -o mcrfvi/output/ex2.mp4 -y 0
 
 import argparse
 import pickle
