@@ -5,7 +5,7 @@ Created on Wed Mar 31 11:48:58 2021
 @author: Piyusha, Madhura
 """
 
-#python faceEncode.py --dataset dataset/actors --encodings encodings.pickle -c 4
+#python faceEncode.py --dataset dataset/actors --encodings encodings.pickle -c 4 -fnn
 
 from imutils import paths
 import face_recognition
