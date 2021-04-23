@@ -90,6 +90,19 @@ class FaceRec:
         encodings = face_recognition.face_encodings(image_rgb, boxes)
 
         names = []
+        
+         if encodings:
+            if use_fastnn or known_encodings_structure == constants.ENC_KDTREE:
+                # check if kdtree is to be recomputed or not
+                if known_encodings_structure != constants.ENC_KDTREE:
+                    known_encodings = KDTree(np.asarray(encodings), leaf_size=constants.LEAF_SIZE_KDTREE)
+                    encoding_structure = constants.ENC_KDTREE
+
+                names = _fast_face_match_knn(known_encodings, encodings, known_names, constants.NORM_DIST_TOLERANCE,
+                                             constants.K_NN)
+            else:
+                names = _linear_search(known_encodings, encodings, known_names)
+
 
        
         return names, boxes
