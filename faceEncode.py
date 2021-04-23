@@ -60,7 +60,6 @@ def _process_images():
                     help="path to serialized db of facial encodings")
     ap.add_argument("-d", "--detection-method", type=str, default="cnn",
                     help="face detection model to use: either `hog` or `cnn`")
-    ap.add_argument("-fnn", "--fast-nn", action="store_true")
     ap.add_argument("-c", "--cores", required=False, type=int, default=1,
                     help="no of cores to run on, will decide the parallelism")
     args = vars(ap.parse_args())
@@ -92,18 +91,7 @@ def _process_images():
     # select encoding as kdtree or list based on user args
     encoding_structure = constants.ENC_LIST
 
-    if args["fast_nn"]:
-        encoding_structure = constants.ENC_KDTREE
-        known_encodings = KDTree(np.asarray(known_encodings), leaf_size=constants.LEAF_SIZE_KDTREE)
-
-    data = {constants.KNOWN_ENCODINGS: known_encodings,
-            constants.KNOWN_NAMES: known_names,
-            constants.ENCODING_STRUCTURE: encoding_structure
-            }
-
-    f = open(args["encodings"], "wb")
-    f.write(pickle.dumps(data))
-    f.close()
+    
 
 
 if __name__ == "__main__":
