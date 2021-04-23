@@ -9,7 +9,7 @@ Created on Wed Mar 20 11:51:46 2021
 import argparse
 import pickle
 
-import cv2
+from cv2 import cv2
 import imutils
 import progressbar
 
