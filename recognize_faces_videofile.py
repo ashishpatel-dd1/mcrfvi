@@ -16,7 +16,6 @@ import progressbar
 import constants
 from face_recog_techniques import FaceRec
 
-# construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-e", "--encodings", required=True,
                 help="path to serialized db of facial encodings")
