@@ -52,7 +52,6 @@ def _encode_faces(imagePath, detection_method):
 
 
 def _process_images():
-    # construct the argument parser and parse the arguments
     ap = argparse.ArgumentParser()
     ap.add_argument("-i", "--dataset", required=True,
                     help="path to input directory of faces + images")
