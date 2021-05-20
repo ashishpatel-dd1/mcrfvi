@@ -3,7 +3,7 @@ input_shape {
   dim: 1
   dim: 3
   dim: 300
-  dim: 
+  dim: 300
 }
 
 layer {
