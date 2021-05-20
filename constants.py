@@ -17,4 +17,4 @@ NORM_DIST_TOLERANCE = 0.6
 K_NN = 5
 
 # id for unknown faces 
-ID_UNKNOWN = "Unknown"
+ID_UNKNOWN = ""
